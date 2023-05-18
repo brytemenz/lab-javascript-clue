@@ -127,12 +127,23 @@ function pickMystery() {
 
 // ITERATION 3
 
-function revealMystery() {
-  const { suspect, weapon, room } = pickMystery();
+function revealMystery(mystery) {
+  const suspect = mystery.suspect;
+  const weapon = mystery.weapon;
+  const room = mystery.room;
 
-  const suspectName = `${suspect.firstName} ${suspect.lastName}`;
-  const weaponName = weapon.name;
-  const roomName = room.name;
+  const message =
+    suspect.firstName +
+    " " +
+    suspect.lastName +
+    " killed Mr. Boddy using the " +
+    weapon.name +
+    " in the " +
+    room.name +
+    "!";
 
-  return `${suspectName} killed Mr. Boddy using the ${weaponName} in the ${roomName}!`;
+  return message;
 }
+
+let mystery = pickMystery();
+console.log(revealMystery(mystery));
