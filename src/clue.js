@@ -134,5 +134,5 @@ function revealMystery() {
   const weaponName = weapon.name;
   const roomName = room.name;
 
-  return `${suspectName.toUpperCase} killed Mr. Boddy using the ${weaponName} in the ${roomName}!`;
+  return `${suspectName} killed Mr. Boddy using the ${weaponName} in the ${roomName}!`;
 }
