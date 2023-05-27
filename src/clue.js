@@ -3,9 +3,9 @@
 // Suspects Array
 
 const suspectsArray = [
+  //arrays start and end with square brackets
   {
-    id: "mrGreen",
-    firstName: "Jacob",
+    firstName: "Jacob", //remember comma amd double quotes
     lastName: "Green",
     occupation: "Entrepreneur",
     age: 45,
@@ -15,7 +15,6 @@ const suspectsArray = [
     color: "green",
   },
   {
-    id: "drOrchid",
     firstName: "Doctor",
     lastName: "Orchid",
     occupation: "Scientist",
@@ -25,7 +24,6 @@ const suspectsArray = [
     color: "white",
   },
   {
-    id: "profPlum",
     firstName: "Victor",
     lastName: "Plum",
     occupation: "Designer",
@@ -36,7 +34,6 @@ const suspectsArray = [
     color: "purple",
   },
   {
-    id: "missScarlet",
     firstName: "Kasandra",
     lastName: "Scarlet",
     occupation: "Actor",
@@ -46,10 +43,9 @@ const suspectsArray = [
     color: "red",
   },
   {
-    id: "mrsPeacock",
     firstName: "Eleanor",
     lastName: "Peacock",
-    occupation: "Socialité",
+    occupation: "SocialitÃ©",
     age: 36,
     description:
       "She is from a wealthy family and uses her status and money to earn popularity",
@@ -57,7 +53,6 @@ const suspectsArray = [
     color: "blue",
   },
   {
-    id: "mrMustard",
     firstName: "Jack",
     lastName: "Mustard",
     occupation: "Retired Football player",
@@ -107,13 +102,18 @@ const weaponsArray = [
 // ITERATION 2
 
 function selectRandom(array) {
-  const randomIndex = Math.floor(Math.random() * array.length);
-  return array[randomIndex];
+  if (array.length === 0) {
+    return undefined;
+  } else if (array.length === 1) {
+    return array[0];
+  } else {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+  }
 }
 
 function pickMystery() {
-  const randomSuspect =
-    suspectsArray[Math.floor(Math.random() * suspectsArray.length)];
+  const randomSuspect = selectRandom(suspectsArray);
   const randomWeapon =
     weaponsArray[Math.floor(Math.random() * weaponsArray.length)];
   const randomRoom = roomsArray[Math.floor(Math.random() * roomsArray.length)];
